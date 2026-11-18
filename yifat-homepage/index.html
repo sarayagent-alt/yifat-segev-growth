@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ד״ר יפעת שגב | ליווי הורים לילדים עם הפרעת אכילה</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="ליווי מעשי ורגשי להורים לילד או למתבגר עם הפרעת אכילה, לצד הצוות המטפל. שיחת היכרות של 20 דקות עם ד״ר יפעת שגב.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400..700&family=Alef:wght@400;700&display=swap">
+<style>
+/* colour roles
+   white  = ground
+   navy   = text, the action colour, the week section
+   yellow = "Yifat is with you": hero field, her touchpoints in the week, the contact section
+   sky    = the treating team / supporting surfaces */
+:root{
+  --navy:#0a1f44;--navy-2:#3b5078;--navy-3:#c9d6ea;
+  --yellow:#ffe45c;--sky:#9fd8ff;--sky-soft:#e8f5ff;--rule:#dfe6f0;
+  --max:1200px;--pad:32px;--r:14px;
+  --display:Fredoka,Alef,Arial,sans-serif;--text:Alef,Arial,sans-serif;
+  --s1:8px;--s2:16px;--s3:24px;--s4:40px;--s5:64px;--s6:112px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:#fff;color:var(--navy);font:400 1.125rem/1.7 var(--text);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.week :focus-visible{outline-color:#fff}
+.c{max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:600;letter-spacing:-.01em}
+h1,h2,.voices blockquote,.scope p{text-wrap:balance}
+h2{font-size:clamp(1.9rem,3.1vw,2.75rem);line-height:1.12}
+h3{font-size:1.35rem;line-height:1.25}
+p{margin:0 0 var(--s2)}
+section{padding-block:var(--s6)}
+@media (max-width:900px){:root{--pad:20px;--s6:72px}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--navy);color:#fff;font:700 1.08rem var(--text);padding:15px 26px;border-radius:10px;text-decoration:none;border:0;cursor:pointer;transition:background .2s}
+.btn:hover{background:#17357a}
+.btn.light{background:#fff;color:var(--navy)}
+.btn.light:hover{background:var(--sky-soft)}
+.wa{font-weight:700;text-underline-offset:6px;text-decoration-thickness:2px}
+.tbc{border-bottom:2px dotted currentColor}
+.tbc::after{content:"*";font-size:.75em;vertical-align:super}
+
+/* ── drawn documents (her deliverables, as objects) ── */
+.sheet{background:#fff;color:var(--navy);border-radius:.6em;padding:1.3em 1.4em 1.5em;box-shadow:0 1.6em 3em -1.6em rgba(10,31,68,.45),0 0 0 1px rgba(10,31,68,.06);font:400 1em/1.45 var(--text);text-align:start}
+.sheet header{display:flex;justify-content:space-between;align-items:baseline;border-bottom:.15em solid var(--navy);padding-bottom:.5em;margin-bottom:.8em}
+.sheet header b{font:600 1.35em var(--display)}
+.sheet header span{font-size:.85em;color:var(--navy-2)}
+.sheet .row{display:grid;grid-template-columns:1.1em 1fr;gap:.7em;padding:.5em 0;border-bottom:.08em solid var(--rule)}
+.sheet .row:last-child{border:0;padding-bottom:0}
+.sheet .box{width:1.1em;height:1.1em;border:.14em solid var(--navy);border-radius:.2em;margin-top:.2em}
+.sheet .box.on{background:var(--yellow)}
+.sheet .row b{display:block;font-weight:700}
+.sheet .row span{color:var(--navy-2);font-size:.92em}
+.sheet .blk{margin-bottom:.9em}
+.sheet .blk b{display:block;font-weight:700;margin-bottom:.45em}
+.sheet .ln{height:.09em;background:var(--navy-3);margin:.75em 0}
+.sheet .tx{height:.5em;border-radius:.25em;background:var(--rule);margin:.55em 0}
+
+/* ── header ── */
+.top{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--rule)}
+.top .c{display:flex;align-items:center;gap:28px;height:84px}
+.brand{text-decoration:none;margin-inline-end:auto;display:flex;align-items:center;gap:12px}
+.brand svg{width:40px;height:20px}
+.brand b{font:600 1.3rem var(--display)}
+.brand small{display:block;font-size:.82rem;color:var(--navy-2);margin-top:-2px}
+.top nav{display:flex;gap:28px;font-weight:700;font-size:1rem}
+.top nav a{text-decoration:none}
+.top nav a:hover{text-decoration:underline;text-underline-offset:6px}
+.top .tel{font-weight:700;text-decoration:none;direction:ltr;font-variant-numeric:tabular-nums}
+.top .btn{padding:11px 18px;font-size:1rem}
+@media (max-width:1080px){.top nav{display:none}}
+.top .btn,.brand b{white-space:nowrap}
+@media (max-width:640px){.top .tel,.brand small{display:none}.top .c{height:68px;gap:12px}.top .btn{padding:9px 12px;font-size:.92rem}.brand b{font-size:1.1rem}.brand svg{width:30px}}
+
+/* ── hero ── */
+.hero{padding:0}
+.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.hero .copy{padding:var(--s5) max(var(--pad),calc((100vw - var(--max))/2 + var(--pad))) var(--s5) clamp(48px,9vw,150px);align-self:center}
+.hero h1{font-size:clamp(2.3rem,4.3vw,3.9rem);line-height:1.08;margin-bottom:var(--s3)}
+.hero h1 span{display:block}
+.hero .sub{font-size:1.25rem;line-height:1.6;max-width:36ch;margin-bottom:var(--s4)}
+.hero .acts{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center}
+.hero .promise{font-size:.98rem;color:var(--navy-2);margin:var(--s2) 0 0}
+.hero .media{background:var(--yellow);position:relative;padding:var(--s5) clamp(24px,4vw,64px) var(--s5) clamp(24px,5vw,80px);display:flex;align-items:center}
+.hero .media figure{margin:0;position:relative;width:100%;max-width:440px}
+.hero .media img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;border-radius:var(--r)}
+.hero .sheet{position:absolute;inset-inline-start:clamp(-130px,-9vw,-60px);bottom:36px;width:250px;font-size:11.5px}
+.proof{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule)}
+.proof li{padding:22px 0;font:600 1.08rem var(--display)}
+.proof li + li{padding-inline-start:28px;border-inline-start:1px solid var(--rule)}
+/* the hours ruler: 168 ticks, one of them is the session */
+.ruler{padding-block:var(--s4) var(--s5)}
+.ruler .cap{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:14px;font-size:.98rem}
+.ruler .cap b{font:600 1.15rem var(--display)}
+.ruler .cap span i{display:inline-block;width:10px;height:18px;border-radius:2px;margin-inline:18px 8px;vertical-align:-3px}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+.day .ticks{display:grid;grid-template-columns:repeat(24,1fr);gap:2px;height:38px}
+.day .ticks i{background:var(--navy-3);border-radius:2px}
+.day .ticks i.tx{background:var(--navy)}
+.day small{display:block;margin-top:8px;font-size:.85rem;color:var(--navy-2)}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero .media{order:-1;padding:28px var(--pad) 28px}
+  .hero .media figure{max-width:none;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:end}
+  .hero .media img{aspect-ratio:3/4}
+  .hero .sheet{position:static;width:auto;font-size:8.5px}
+  .hero .copy{padding:36px var(--pad) 40px}
+  .proof{grid-template-columns:1fr}
+  .proof li{padding:14px 0}
+  .proof li + li{padding-inline-start:0;border-inline-start:0;border-top:1px solid var(--rule)}
+  .days{grid-template-columns:1fr;gap:4px}
+  .day{display:grid;grid-template-columns:34px 1fr;align-items:center}
+  .day small{order:-1;margin:0}
+  .day .ticks{height:14px}
+  .ruler .cap span i{margin-inline-start:0}
+  .ruler .cap span{display:block}
+}
+
+/* ── stages ── */
+.stages{padding-top:var(--s5)}
+.stages .head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s4);align-items:end;margin-bottom:var(--s4)}
+.stages .head p{margin:0;color:var(--navy-2)}
+.st{display:grid;grid-template-columns:repeat(3,1fr);column-gap:12px;row-gap:12px}
+.st .tab{all:unset;box-sizing:border-box;grid-row:1;cursor:pointer;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:center;padding:22px 24px;border-radius:var(--r);box-shadow:inset 0 0 0 1.5px var(--navy-3);transition:background .2s,box-shadow .2s}
+.st .tab:hover{box-shadow:inset 0 0 0 1.5px var(--navy)}
+.st .tab:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.st .tab[aria-selected=true]{background:var(--navy);color:#fff;box-shadow:none}
+.st .tab svg{width:56px;height:56px}
+.st .tab h3{margin-bottom:2px}
+.st .tab small{font-size:.98rem;opacity:.8;line-height:1.4;display:block}
+.st .panel{grid-row:2;grid-column:1/-1;background:var(--sky-soft);border-radius:var(--r);padding:clamp(24px,4vw,48px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,56px);align-items:start}
+.st .panel[hidden]{display:none}
+.st .panel h3{font-size:1.7rem;margin-bottom:var(--s2)}
+.st .panel ul{margin:0;padding:0;list-style:none}
+.st .panel li{padding:12px 0;border-top:1px solid #c5def3}
+.st .panel li:first-child{border-top:0;padding-top:0}
+.st .panel .first{background:#fff;padding:28px;border-radius:10px}
+.st .panel .first h4{font:700 1rem var(--text);letter-spacing:0;margin-bottom:6px}
+@media (max-width:900px){
+  .stages .head{grid-template-columns:1fr;gap:var(--s2)}
+  .st{grid-template-columns:1fr}
+  .st .tab,.st .panel{grid-row:auto;grid-column:auto}
+  .st .tab{padding:16px 18px;grid-template-columns:44px 1fr;gap:14px}
+  .st .tab svg{width:44px;height:44px}
+  .st .panel{grid-template-columns:1fr;margin-top:-4px}
+}
+
+/* ── the week ── */
+.week{background:var(--navy);color:#fff}
+.week .head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s4);align-items:end;margin-bottom:var(--s4)}
+.week h2{font-size:clamp(2.1rem,3.9vw,3.4rem);line-height:1.06}
+.week .head p{color:#cfdcf2;margin:0 0 var(--s3)}
+.toggle{display:inline-grid;grid-template-columns:1fr 1fr;position:relative;background:#ffffff1a;border-radius:10px;padding:4px}
+.toggle button{all:unset;box-sizing:border-box;cursor:pointer;padding:10px 22px;font-weight:700;text-align:center;border-radius:7px;position:relative;z-index:1;transition:color .3s;white-space:nowrap}
+.toggle button:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.toggle::before{content:"";position:absolute;inset-block:4px;inset-inline-start:4px;width:calc(50% - 4px);background:#fff;border-radius:7px;transition:transform .45s cubic-bezier(.3,.8,.2,1),background .3s}
+.with .toggle::before{transform:translateX(-100%);background:var(--yellow)}
+.toggle button[aria-pressed=true]{color:var(--navy)}
+.auto{height:3px;margin-top:10px;background:#ffffff26;border-radius:2px;overflow:hidden}
+.auto i{display:block;height:100%;width:100%;background:#fff;transform-origin:right;transform:scaleX(0)}
+.auto.run i{animation:fill var(--dur,5s) linear forwards}
+.auto.off{visibility:hidden}
+@keyframes fill{to{transform:scaleX(1)}}
+.cal{display:grid;grid-template-columns:120px repeat(7,minmax(0,1fr));gap:6px;font-size:.95rem}
+.cal .dh{font:600 1rem var(--display);padding:0 12px 10px}
+.cal .rh{font:600 1rem var(--display);display:flex;align-items:center;color:#cfdcf2}
+.week .cell{min-height:78px;border-radius:10px;background:#ffffff12;padding:12px;line-height:1.35;color:#b9c8e2;display:grid}
+.week .cell > span{grid-area:1/1;transition:opacity .35s}
+.week .cell.tx{background:var(--sky);color:var(--navy);font-weight:700}
+.week .cell.me{transition:background .45s,color .45s,transform .45s;transition-delay:calc(var(--i)*60ms)}
+.week .cell.me > span{transition-delay:calc(var(--i)*60ms)}
+.week .cell.me .y{opacity:0;font-weight:700}
+.week.with .cell.me{background:var(--yellow);color:var(--navy)}
+.week.with .cell.me .y{opacity:1}
+.week.with .cell.me .base{opacity:0}
+.legend{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:var(--s3);font-size:.95rem;color:#cfdcf2}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-inline-end:8px;vertical-align:-2px}
+.week .note{margin:10px 0 0;font-size:.88rem;color:#93a7c9}
+@media (max-width:900px){
+  .week .head{grid-template-columns:1fr;gap:var(--s2)}
+  .week .cal{display:none}
+  .week .agenda{display:grid}
+}
+.agenda{display:none;gap:6px}
+.aday{display:grid;grid-template-columns:52px 1fr;gap:10px;align-items:start;background:#ffffff0d;border-radius:10px;padding:10px}
+.aday > b{font:600 1rem var(--display);padding-top:6px}
+.aday .items{display:flex;flex-wrap:wrap;gap:6px}
+.week .aday .cell{min-height:0;padding:6px 10px;border-radius:8px;font-size:.9rem}
+.week .aday .cell.nobase{opacity:0;transition:opacity .45s,background .45s}
+.week.with .aday .cell.nobase{opacity:1}
+@media (prefers-reduced-motion:reduce){.week .cell.me,.week .cell > span,.toggle::before{transition:none}.auto{display:none}}
+
+/* ── deliverables ── */
+.deliv .head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s4);align-items:end;margin-bottom:var(--s4)}
+.deliv .head p{margin:0;color:var(--navy-2)}
+.dgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3)}
+.dgrid .tile{background:var(--sky-soft);border-radius:var(--r);aspect-ratio:1/1.08;display:flex;align-items:flex-end;justify-content:center;padding:28px 28px 0;overflow:hidden;margin-bottom:var(--s3)}
+.dgrid .sheet{width:100%;font-size:8.6px;border-radius:.6em .6em 0 0;padding-bottom:2.4em;box-shadow:0 0 0 1px rgba(10,31,68,.06),0 -1em 2.6em -1.4em rgba(10,31,68,.4)}
+.dgrid h3{margin-bottom:8px}
+.dgrid p{margin:0;font-size:1.02rem;line-height:1.6}
+.scope{margin-top:var(--s5);border-top:2px solid var(--navy);padding-top:var(--s3);display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:var(--s4)}
+.scope strong{font:600 1.2rem var(--display)}
+.scope p{margin:0;font:500 clamp(1.3rem,2.1vw,1.75rem)/1.4 var(--display);max-width:32em}
+@media (max-width:1000px){.dgrid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:var(--s4)}}
+@media (max-width:900px){.deliv .head,.scope{grid-template-columns:1fr;gap:var(--s2)}}
+@media (max-width:520px){.dgrid{grid-template-columns:1fr}.dgrid .tile{aspect-ratio:1/.8}.dgrid .sheet{max-width:260px}}
+
+/* ── story ── */
+.story{padding-top:0}
+.story .c{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,7vw,104px);align-items:center}
+.story .ph{aspect-ratio:1/1;overflow:hidden;border-radius:var(--r)}
+.story .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;transform:scale(1.75);transform-origin:56% 20%}
+.story h2{margin-bottom:var(--s3)}
+.story p{max-width:58ch}
+.creds{list-style:none;padding:0;margin:var(--s4) 0 0;display:grid;grid-template-columns:1fr 1fr;column-gap:var(--s3)}
+.creds li{padding:14px 0;border-top:1px solid var(--rule);font-size:1rem;line-height:1.45}
+.creds b{display:block;font:600 1.08rem var(--display)}
+.creds span{color:var(--navy-2)}
+@media (max-width:900px){.story .c{grid-template-columns:1fr}.story .ph{max-width:340px}.creds{grid-template-columns:1fr}}
+
+/* ── voices ── */
+.voices{background:var(--sky)}
+.voices blockquote{margin:0;max-width:24em;font:500 clamp(1.5rem,2.7vw,2.3rem)/1.38 var(--display)}
+.voices cite{display:block;margin-top:var(--s3);font:700 1rem var(--text);font-style:normal}
+.voices .more{margin:var(--s4) 0 0;font-size:.95rem;max-width:60ch;color:#24426f}
+
+/* ── process + price ── */
+.pp .c{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,6vw,88px);align-items:start}
+.pp h2{margin-bottom:var(--s3)}
+.steps{list-style:none;padding:0;margin:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:72px 1fr;gap:var(--s2);padding:24px 0;border-top:1px solid var(--rule)}
+.steps li::before{content:counter(s);width:48px;height:48px;border-radius:10px;background:var(--sky-soft);display:grid;place-items:center;font:600 1.4rem var(--display)}
+.steps li:first-child::before{background:var(--yellow)}
+.steps h3{margin-bottom:4px}
+.steps p{margin:0}
+.steps .len{font-size:.98rem;color:var(--navy-2);margin-top:6px;display:block}
+.price{background:var(--navy);color:#fff;border-radius:var(--r);padding:clamp(24px,3.4vw,40px);position:sticky;top:24px}
+.price h3{font-size:1.6rem;margin-bottom:var(--s2)}
+.price dl{margin:0}
+.price dl div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid #ffffff2e}
+.price dd{margin:0;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.price p{font-size:.95rem;color:#cfdcf2;margin:var(--s2) 0 var(--s3)}
+.price .btn{width:100%}
+@media (max-width:900px){.pp .c{grid-template-columns:1fr}.price{position:static}.steps li{grid-template-columns:60px 1fr}}
+
+/* ── FAQ ── */
+.faq{padding-top:0}
+.faq .c{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,88px)}
+.faq h2{margin-bottom:var(--s2)}
+.faq details{border-bottom:1px solid var(--rule)}
+.faq details:first-of-type{border-top:1px solid var(--rule)}
+.faq summary{cursor:pointer;list-style:none;padding:22px 0;font:600 1.25rem/1.3 var(--display);display:flex;justify-content:space-between;gap:20px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:32px;height:32px;border-radius:8px;background:var(--sky-soft);display:grid;place-items:center;font:400 1.4rem/1 var(--text)}
+.faq details[open] summary::after{content:"–";background:var(--navy);color:#fff}
+.faq details p{margin:0;padding-bottom:22px;max-width:60ch}
+@media (max-width:900px){.faq .c{grid-template-columns:1fr}}
+
+/* ── contact ── */
+.contact{background:var(--yellow)}
+.contact .c{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,6vw,88px);align-items:start}
+.contact h2{font-size:clamp(2.1rem,3.9vw,3.4rem);margin-bottom:var(--s2)}
+.contact .lede{font-size:1.2rem;max-width:36ch}
+.next{margin:var(--s4) 0;padding:0;list-style:none;counter-reset:n;max-width:30em}
+.next li{counter-increment:n;display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:center;padding:12px 0;border-top:1px solid #0a1f4433}
+.next li::before{content:counter(n);width:32px;height:32px;border-radius:8px;background:var(--navy);color:#fff;display:grid;place-items:center;font:600 1rem var(--display)}
+.channels{display:flex;flex-wrap:wrap;gap:12px 28px;font-weight:700}
+.channels a{text-underline-offset:6px;text-decoration-thickness:2px}
+.sos{margin:var(--s4) 0 0;padding:16px 18px;background:#fff7c7;border-radius:10px;font-size:.98rem;max-width:34em}
+form.lead{background:#fff;border-radius:var(--r);padding:clamp(22px,3.4vw,40px);display:grid;gap:18px}
+form.lead label{display:grid;gap:6px;font-weight:700}
+form.lead input,form.lead select{font:inherit;font-weight:400;padding:13px 14px;border:1.5px solid var(--navy-3);border-radius:10px;color:var(--navy);background:#fff}
+form.lead input:focus,form.lead select:focus{outline:0;border-color:var(--navy)}
+form.lead fieldset{border:0;margin:0;padding:0}
+form.lead legend{font-weight:700;margin-bottom:8px;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{display:block}
+.chips input{position:absolute;opacity:0}
+.chips span{display:inline-block;padding:8px 14px;border:1.5px solid var(--navy-3);border-radius:10px;cursor:pointer;font-weight:400}
+.chips input:checked + span{background:var(--navy);border-color:var(--navy);color:#fff}
+.chips input:focus-visible + span{outline:3px solid var(--navy);outline-offset:2px}
+.consent{display:flex!important;gap:10px!important;align-items:flex-start;font-weight:400!important;font-size:.9rem;color:var(--navy-2)}
+.consent input{margin-top:6px}
+@media (max-width:900px){.contact .c{grid-template-columns:1fr}}
+
+/* ── secondary ── */
+.second .c{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s3)}
+.second article{display:flex;flex-direction:column;gap:14px}
+.second .tile{border-radius:var(--r);height:300px;margin-bottom:10px;overflow:hidden;position:relative}
+.second .poster{background:var(--navy);color:#fff;padding:36px;display:flex;flex-direction:column;justify-content:space-between}
+.second .poster b{font:600 clamp(1.8rem,3.2vw,2.7rem)/1.1 var(--display);max-width:12em}
+.second .poster span{font-size:.95rem;color:#cfdcf2}
+.second .poster i{position:absolute;inset-inline-end:36px;bottom:36px;width:64px;height:64px;border-radius:12px;background:var(--yellow)}
+.second .papers{background:var(--sky-soft)}
+.second .papers .sheet{position:absolute;width:58%;font-size:8.6px;top:40px;inset-inline-start:14%}
+.second .papers .sheet + .sheet{top:76px;inset-inline-start:34%}
+.second .who{font-weight:700;color:var(--navy-2);font-size:.98rem;margin:0}
+.second h2{font-size:clamp(1.5rem,2.3vw,2rem)}
+.second p,.second ul{margin:0}
+.second ul{padding-inline-start:1.2em}
+.second .btn{align-self:flex-start;margin-top:auto}
+.mail{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.mail input{flex:1;min-width:180px;font:inherit;padding:13px 14px;border:1.5px solid var(--navy-3);border-radius:10px}
+@media (max-width:900px){.second .c{grid-template-columns:1fr;gap:var(--s5)}.second .tile{height:240px}}
+
+footer{border-top:1px solid var(--rule);padding-block:28px;font-size:.92rem}
+footer .c{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 28px}
+footer nav{display:flex;gap:22px;flex-wrap:wrap}
+footer a{text-decoration:none}
+.key{font-size:.85rem;color:var(--navy-2);padding-top:14px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="c">
+    <a class="brand" href="#"><svg viewBox="0 0 40 20" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="20" cy="10" rx="18.5" ry="8.5"/><ellipse cx="20" cy="10" rx="11" ry="5"/></g><ellipse cx="20" cy="10" rx="4" ry="1.8" fill="currentColor"/></svg><span><b>ד״ר יפעת שגב</b><small>ליווי הורים בהתמודדות עם הפרעות אכילה</small></span></a>
+    <nav aria-label="ניווט ראשי"><a href="#stages">הליווי</a><a href="#week">השבוע שלכם</a><a href="#about">עליי</a><a href="#price">תהליך ומחיר</a><a href="#lecture">הרצאות</a></nav>
+    <a class="tel" href="tel:0546556479">054-6556479</a>
+    <a class="btn" href="#contact">לקבוע שיחת היכרות</a>
+  </div>
+</header>
+
+<main>
+<!-- 1 HERO -->
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-grid">
+    <div class="copy">
+      <h1 id="h1"><span>בין הפגישות עם הצוות יש 167 שעות בבית.</span><span>אני עוזרת לכם לנהל אותן.</span></h1>
+      <p class="sub">ליווי מעשי ורגשי להורים לילד או למתבגר עם הפרעת אכילה, לצד הצוות המטפל. מאמא שעברה את הדרך הזאת, וחוקרת מוח.</p>
+      <div class="acts">
+        <a class="btn" href="#contact">לקבוע שיחת היכרות של 20 דקות</a>
+        <a class="wa" href="https://wa.me/972546556479?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%99%D7%A4%D7%A2%D7%AA%2C%20%D7%90%D7%A0%D7%99%20%D7%94%D7%95%D7%A8%D7%94%20%D7%9C...%20%D7%95%D7%90%D7%A0%D7%97%D7%A0%D7%95%20%D7%91%D7%A9%D7%9C%D7%91...">לכתוב לי בוואטסאפ</a>
+      </div>
+      <p class="promise">השיחה <span class="tbc">ללא עלות</span>. אני עונה בעצמי, <span class="tbc">בדרך כלל באותו יום</span>.</p>
+    </div>
+    <div class="media">
+      <figure>
+        <img src="https://static.wixstatic.com/media/4360aa_fdca024693e84b8b88df10d3ef162032~mv2.png/v1/fill/w_900,h_1125,al_c,q_85/IMG_5576_edited.png" alt="ד״ר יפעת שגב" width="440" height="550">
+        <div class="sheet" aria-hidden="true">
+          <header><b>תוכנית הבית</b><span>שבוע 3</span></header>
+          <div class="row"><i class="box on"></i><div><b>ארוחות</b><span>מי יושב, מתי, ומה עושים אחרי</span></div></div>
+          <div class="row"><i class="box on"></i><div><b>תורים</b><span>יום ב׳ 16:00, הצוות המטפל</span></div></div>
+          <div class="row"><i class="box"></i><div><b>בית ספר</b><span>שיחה עם המחנכת</span></div></div>
+          <div class="row"><i class="box"></i><div><b>נקודת בדיקה</b><span>יום ה׳ בערב</span></div></div>
+        </div>
+      </figure>
+    </div>
+  </div>
+  <div class="c">
+    <ul class="proof"><li>אמא לבת שהחלימה</li><li>PhD במדעי המוח, אוניברסיטת חיפה</li><li>עובדת לצד הצוות המטפל</li></ul>
+    <div class="ruler" aria-hidden="true">
+      <div class="cap"><b>168 שעות בשבוע</b><span><i style="background:var(--navy)"></i>שעה אחת עם הצוות<i style="background:var(--navy-3)"></i>167 שעות בבית</span></div>
+      <div class="days" id="days"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 STAGES -->
+<section class="stages" id="stages" aria-labelledby="st-h">
+  <div class="c">
+    <div class="head"><h2 id="st-h">הליווי, לפי השלב שבו אתם נמצאים</h2><p>כל שלב במסע נראה אחרת, וגם העזרה שאתם צריכים. בחרו את השלב שלכם.</p></div>
+    <div class="st" role="tablist" aria-label="שלבים">
+      <button class="tab" role="tab" id="t1" aria-selected="true" aria-controls="p1">
+        <svg viewBox="0 0 56 56" aria-hidden="true"><rect x="6" y="8" width="11" height="11" rx="2.5" fill="#ffe45c"/><rect x="6" y="23" width="11" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="6" y="38" width="11" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><g stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M24 13.5h26M24 28.5h20M24 43.5h24"/></g></svg>
+        <div><h3>רק התחיל</h3><small>חשד, או אבחון טרי</small></div></button>
+      <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1">
+        <div><h3>להבין מה קורה, ולדעת מה הצעד הבא</h3><ul><li>מיפוי הצרכים של המשפחה כולה</li><li>הסבר על המחלה ועל תהליך הטיפול, בשפה פשוטה</li><li>איתור אנשי מקצוע ומסגרת טיפולית מתאימה</li></ul></div>
+        <div class="first"><h4>מה תקבלו כבר בשיחה הראשונה</h4><p>תמונה ברורה של האפשרויות שלכם, ורשימת צעדים לשבוע הקרוב.</p><a class="btn" href="#contact" data-pick="רק התחיל">לקבוע שיחת היכרות</a></div>
+      </div>
+      <button class="tab" role="tab" id="t2" aria-selected="false" aria-controls="p2" tabindex="-1">
+        <svg viewBox="0 0 56 56" aria-hidden="true"><g fill="currentColor" opacity=".28"><rect x="6" y="6" width="8" height="8" rx="2"/><rect x="18" y="6" width="8" height="8" rx="2"/><rect x="30" y="6" width="8" height="8" rx="2"/><rect x="42" y="6" width="8" height="8" rx="2"/><rect x="6" y="18" width="8" height="8" rx="2"/><rect x="18" y="18" width="8" height="8" rx="2"/><rect x="30" y="18" width="8" height="8" rx="2"/><rect x="42" y="18" width="8" height="8" rx="2"/><rect x="6" y="30" width="8" height="8" rx="2"/><rect x="18" y="30" width="8" height="8" rx="2"/><rect x="42" y="30" width="8" height="8" rx="2"/><rect x="6" y="42" width="8" height="8" rx="2"/><rect x="18" y="42" width="8" height="8" rx="2"/><rect x="30" y="42" width="8" height="8" rx="2"/></g><rect x="30" y="30" width="8" height="8" rx="2" fill="#ffe45c"/><rect x="42" y="42" width="8" height="8" rx="2" fill="#9fd8ff"/></svg>
+        <div><h3>מחכים לטיפול</h3><small>ברשימת המתנה, וצריך לנהל את הבית עכשיו</small></div></button>
+      <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+        <div><h3>לא מחכים לבד</h3><ul><li>תוכנית ניהול מחלה מותאמת לבית שלכם</li><li>כלים מעשיים לפי עקרונות הטיפול המשפחתי</li><li>עזרה בתקשורת מול בית הספר ומוסדות החינוך</li></ul></div>
+        <div class="first"><h4>מה תקבלו כבר בשיחה הראשונה</h4><p>הכוונה למה אפשר לעשות כבר עכשיו, עוד לפני שהטיפול מתחיל.</p><a class="btn" href="#contact" data-pick="מחכים לטיפול">לקבוע שיחת היכרות</a></div>
+      </div>
+      <button class="tab" role="tab" id="t3" aria-selected="false" aria-controls="p3" tabindex="-1">
+        <svg viewBox="0 0 56 56" aria-hidden="true"><rect x="38" y="10" width="12" height="12" rx="3" fill="#9fd8ff"/><path d="M32 16H22a6 6 0 0 0-6 6v12a6 6 0 0 0 6 6h4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 6"/><rect x="6" y="34" width="12" height="12" rx="3" fill="#ffe45c"/><rect x="24" y="34" width="12" height="12" rx="3" fill="#ffe45c"/><rect x="42" y="34" width="8" height="12" rx="3" fill="currentColor" opacity=".28"/></svg>
+        <div><h3>בטיפול, וקשה בבית</h3><small>ההנחיות ברורות, היישום בבית קשה</small></div></button>
+      <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+        <div><h3>לחבר בין הפגישות לבין החיים בבית</h3><ul><li>עיבוד והטמעה של מה שסוכם בפגישות הטיפול</li><li>מעקב אחר היעדים שהצוות הגדיר, והתייעצות בין הפגישות</li><li>תזכורות לתורים ועזרה בניהול סדר היום</li></ul></div>
+        <div class="first"><h4>מה תקבלו כבר בשיחה הראשונה</h4><p>זיהוי של המקומות שבהם הבית ״נתקע״, ותוכנית קצרה להתחיל ממנה.</p><a class="btn" href="#contact" data-pick="בטיפול">לקבוע שיחת היכרות</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 THE WEEK -->
+<section class="week" id="week" aria-labelledby="wk-h">
+  <div class="c">
+    <div class="head">
+      <h2 id="wk-h">שעה אחת בשבוע עם הצוות. כל השאר קורה בבית.</h2>
+      <div>
+        <p>כך נראה שבוע של משפחה בטיפול. החליפו בין המצבים כדי לראות איפה הליווי נכנס.</p>
+        <div class="toggle" role="group" aria-label="תצוגת השבוע"><button aria-pressed="true" data-mode="alone">השבוע לבד</button><button aria-pressed="false" data-mode="with">השבוע עם ליווי</button></div>
+        <div class="auto" id="auto" aria-hidden="true"><i></i></div>
+      </div>
+    </div>
+    <div class="calwrap"><div class="cal" id="cal"></div><div class="agenda" id="agenda"></div></div>
+    <div class="legend"><span><i style="background:var(--sky)"></i>פגישה עם הצוות המטפל</span><span><i style="background:var(--yellow)"></i>נקודות שבהן אני איתכם</span></div>
+    <p class="note">דוגמה לשבוע. התוכנית בפועל נבנית לפי המשפחה ולפי הנחיות הצוות.</p>
+  </div>
+</section>
+
+<!-- 4 DELIVERABLES -->
+<section class="deliv" aria-labelledby="dl-h">
+  <div class="c">
+    <div class="head"><h2 id="dl-h">מה מקבלים בפועל</h2><p>כל ליווי מתחיל במיפוי ומותאם למשפחה שלכם. אלה הכלים שנשארים אצלכם בבית.</p></div>
+    <div class="dgrid">
+      <article><div class="tile" aria-hidden="true"><div class="sheet"><header><b>סיכום מיפוי</b></header><div class="blk"><b>מה המשפחה צריכה</b><div class="tx"></div><div class="tx" style="width:70%"></div></div><div class="blk"><b>אנשי מקצוע</b><div class="tx" style="width:85%"></div><div class="tx" style="width:55%"></div></div><div class="blk"><b>צעדים לשבוע הקרוב</b><div class="tx"></div></div></div></div><h3>מיפוי</h3><p>בחינת הצרכים של כל המשפחה, הסבר על המחלה ועל תהליך הטיפול, ואיתור אנשי המקצוע המתאימים.</p></article>
+      <article><div class="tile" aria-hidden="true"><div class="sheet"><header><b>תוכנית הבית</b><span>שבוע 3</span></header><div class="row"><i class="box on"></i><div><b>ארוחות</b><span>מי יושב, מתי</span></div></div><div class="row"><i class="box on"></i><div><b>תורים</b><span>יום ב׳ 16:00</span></div></div><div class="row"><i class="box"></i><div><b>בית ספר</b><span>שיחה עם המחנכת</span></div></div><div class="row"><i class="box"></i><div><b>נקודת בדיקה</b><span>יום ה׳</span></div></div></div></div><h3>תוכנית לבית</h3><p>תוכנית ניהול מחלה אישית: תפקידים, שגרה, תורים ונקודות בדיקה. נבחנת ומתעדכנת לאורך הדרך.</p></article>
+      <article><div class="tile" aria-hidden="true"><div class="sheet"><header><b>בין הפגישות</b><span>דף שבועי</span></header><div class="blk"><b>מה סוכם עם הצוות</b><div class="ln"></div><div class="ln"></div></div><div class="blk"><b>מי אחראי על מה</b><div class="ln"></div><div class="ln"></div></div><div class="blk"><b>שאלות לפגישה הבאה</b><div class="ln"></div></div></div></div><h3>רצף בין הפגישות</h3><p>מעקב אחר היעדים שהצוות הגדיר, ותמיכה ביישום שלהם בבית מפגישה לפגישה.</p></article>
+      <article><div class="tile" aria-hidden="true"><div class="sheet"><header><b>לצוות בית הספר</b></header><div class="tx" style="width:40%"></div><div class="tx"></div><div class="tx"></div><div class="tx" style="width:80%"></div><div class="tx" style="margin-top:1.4em"></div><div class="tx"></div><div class="tx" style="width:60%"></div><div class="tx" style="width:30%;margin-top:1.6em"></div></div></div><h3>הדרכה בגישת FBT</h3><p>עקרונות הטיפול המשפחתי, מתורגמים לכלים לארוחות, לשגרה ולשיחה מול בית הספר.</p></article>
+    </div>
+    <div class="scope"><strong>חשוב לי שתדעו</strong><p>אני לא מטפלת קלינית ולא רופאה. אני מלווה הורים, לצד הצוות המטפל ולא במקומו, כדי שההנחיות שלו יעבדו גם בבית.</p></div>
+  </div>
+</section>
+
+<!-- 5 STORY -->
+<section class="story" id="about" aria-labelledby="ab-h">
+  <div class="c">
+    <div class="ph"><img src="https://static.wixstatic.com/media/4360aa_fdca024693e84b8b88df10d3ef162032~mv2.png/v1/fill/w_900,h_1125,al_c,q_85/IMG_5576_edited.png" alt="ד״ר יפעת שגב" loading="lazy"></div>
+    <div>
+      <h2 id="ab-h">לפני כל התארים, אני אמא.</h2>
+      <p>הבת שלי התמודדה עם הפרעת אכילה והחלימה. חוויתי מקרוב את המסע הארוך והמורכב. נלחמתי לשמור עליה בסביבתה הטבעית, תוך איזון בין הצרכים שלה, של הילדים האחרים ושל הזוגיות. בדרך למדתי משפט שאני חוזרת אליו עד היום: אהבה היא הכוח החזק ביותר להחלמה.</p>
+      <p>אני חוקרת עם רקע במדעי המוח ושנים בתעשיית הבריאות. היום אני משתמשת בשני העולמות האלה כדי לעזור להורים להפוך הנחיות טיפוליות לשגרה שעובדת בבית.</p>
+      <ul class="creds">
+        <li><b>PhD, מדעי המוח</b><span>אוניברסיטת חיפה</span></li>
+        <li><b>M.Sc., נוירואימונולוגיה</b><span>מכון ויצמן למדע</span></li>
+        <li><b>B.A., ביולוגיה</b><span>הטכניון, בהצטיינות יתרה</span></li>
+        <li><b>MBA, חדשנות רפואית</b><span>אוניברסיטת רייכמן</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 6 VOICES -->
+<section class="voices" aria-label="הורים מספרים">
+  <div class="c">
+    <blockquote>״סיפרתי שוב על איזו השפעה אדירה הייתה לך בתקופה הראשונה, גם לוגיסטית וגם נפשית. עד היום מהדהדות לי המילים שלך, כשאמרת לי שרק צריך לחזור כמו מנטרה כמה אנחנו אוהבים אותם.״<cite>אמא שליוויתי</cite></blockquote>
+    <p class="more">כאן ייכנסו עוד שתיים או שלוש המלצות קצרות של הורים, באישורם ובציון השלב, וציטוט אחד מאיש מקצוע שעובד לצד יפעת.</p>
+  </div>
+</section>
+
+<!-- 7 PROCESS + PRICE -->
+<section class="pp" id="price" aria-labelledby="pp-h">
+  <div class="c">
+    <div>
+      <h2 id="pp-h">איך מתחילים</h2>
+      <ol class="steps">
+        <li><div><h3>שיחת היכרות</h3><p>מספרים לי מה קורה. אני מסבירה איך אוכל לעזור, ואם הליווי מתאים לכם.</p><span class="len">20 דקות, בטלפון או בזום</span></div></li>
+        <li><div><h3>פגישת מיפוי</h3><p>פגישה מעמיקה על המשפחה, על הטיפול ועל מה שקורה בבית.</p><span class="len"><span class="tbc">כשעה וחצי</span></span></div></li>
+        <li><div><h3>תוכנית לבית</h3><p>תוכלו להתחיל לעבוד עם התוכנית מיד אחרי המיפוי.</p><span class="len"><span class="tbc">תוך שבוע</span></span></div></li>
+        <li><div><h3>ליווי שוטף</h3><p>פגישות קבועות ושיחות בין הפגישות, עד שהבית מוצא קצב.</p><span class="len"><span class="tbc">פגישה בשבוע, וואטסאפ בימים א׳–ה׳</span></span></div></li>
+      </ol>
+    </div>
+    <aside class="price" aria-labelledby="pr-h">
+      <h3 id="pr-h">מחיר</h3>
+      <dl>
+        <div><dt>שיחת היכרות</dt><dd class="tbc">ללא עלות</dd></div>
+        <div><dt>פגישת מיפוי</dt><dd class="tbc">___ ₪</dd></div>
+        <div><dt>ליווי חודשי</dt><dd class="tbc">החל מ־___ ₪</dd></div>
+      </dl>
+      <p>המחיר הסופי נקבע לפי היקף הליווי שתבחרו. <span class="tbc">אין התחייבות לתקופה</span>.</p>
+      <a class="btn light" href="#contact">לקבוע שיחת היכרות</a>
+    </aside>
+  </div>
+</section>
+
+<!-- 8 FAQ -->
+<section class="faq" aria-labelledby="fq-h">
+  <div class="c">
+    <div><h2 id="fq-h">שאלות שהורים שואלים לפני שמתחילים</h2><p>לא מצאתם תשובה? <a class="wa" href="https://wa.me/972546556479">כתבו לי בוואטסאפ</a></p></div>
+    <div>
+      <details open><summary>האם הליווי מחליף טיפול?</summary><p>לא. הליווי משלים את עבודת הצוות המטפל ולא בא במקומה. אני עוזרת לכם ליישם בבית את מה שהצוות מנחה, לנהל את הלוגיסטיקה ולשמור על רצף.</p></details>
+      <details><summary>אנחנו עוד לא בטיפול. אפשר להתחיל כבר עכשיו?</summary><p>כן. דווקא בתקופת ההמתנה הורים זקוקים לכיוון. אפשר למפות יחד את האפשרויות ולהתארגן בבית עד שהטיפול מתחיל.</p></details>
+      <details><summary>לאילו גילאים זה מתאים?</summary><p>להורים לילדים ולבני נוער המתמודדים עם הפרעת אכילה, <span class="tbc">בגילאי 10–18</span>.</p></details>
+      <details><summary>הפגישות בזום או פנים אל פנים?</summary><p><span class="tbc">בזום מכל הארץ, ופגישות פרונטליות לפי תיאום</span>.</p></details>
+      <details><summary>מה קורה אחרי שאני משאיר/ה פרטים?</summary><p>אני חוזרת אליכם בעצמי, בטלפון או בוואטסאפ לפי מה שבחרתם, <span class="tbc">בדרך כלל באותו יום</span>, ומתאמת שיחת היכרות.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 9 CONTACT -->
+<section class="contact" id="contact" aria-labelledby="ct-h">
+  <div class="c">
+    <div>
+      <h2 id="ct-h">לקבוע שיחת היכרות</h2>
+      <p class="lede">20 דקות, בלי התחייבות. בסוף השיחה תדעו אם הליווי מתאים לכם ומה הצעד הבא.</p>
+      <ol class="next"><li>משאירים שם וטלפון</li><li>אני חוזרת אליכם בעצמי ומתאמת מועד</li><li>מדברים 20 דקות על מה שקורה אצלכם</li></ol>
+      <div class="channels"><a href="https://wa.me/972546556479">וואטסאפ</a><a href="tel:0546556479" style="direction:ltr">054-6556479</a><a href="mailto:contact@yifatsegev.com">contact@yifatsegev.com</a></div>
+      <p class="sos"><strong>במצב חירום</strong> אל תחכו לשיחה. פנו לחדר המיון הקרוב, או התקשרו לער״ן בטלפון 1201.</p>
+    </div>
+    <p class="note">עמוד לדוגמה. הטפסים בעמוד מיועדים להמחשה.</p><form class="lead" onsubmit="event.preventDefault();this.innerHTML='<h3>זהו טופס הדגמה.</h3><p style=&quot;margin:8px 0 0&quot;>הפרטים לא נשלחו. לתיאום שיחה יש לפנות ליפעת דרך פרטי הקשר.</p>'">
+      <label>שם מלא<input name="name" autocomplete="name" required></label>
+      <label>טלפון<input name="tel" type="tel" autocomplete="tel" dir="ltr" required></label>
+      <fieldset><legend>באיזה שלב אתם? (לא חובה)</legend>
+        <div class="chips" id="chips"><label><input type="radio" name="stage" value="רק התחיל"><span>רק התחיל</span></label><label><input type="radio" name="stage" value="מחכים לטיפול"><span>מחכים לטיפול</span></label><label><input type="radio" name="stage" value="בטיפול"><span>בטיפול</span></label><label><input type="radio" name="stage" value="הרצאה"><span>הרצאה לארגון</span></label></div>
+      </fieldset>
+      <label>איך נוח שאחזור אליכם?<select name="via"><option>וואטסאפ</option><option>שיחת טלפון</option></select></label>
+      <label class="consent"><input type="checkbox" required><span>אני מסכים/ה שהמידע ישמש ליצירת קשר בהתאם ל<a href="#">מדיניות הפרטיות</a>.</span></label>
+      <button class="btn" type="submit">שליחה</button>
+    </form>
+  </div>
+</section>
+
+<!-- 10 SECONDARY -->
+<section class="second" aria-label="הרצאות וחומרים">
+  <div class="c">
+    <article id="lecture">
+      <div class="tile poster" aria-hidden="true"><span>הרצאה</span><b>הפרעות אכילה, כשמשפחה הופכת לכוח מרפא</b><i></i></div>
+      <p class="who">לארגונים, לבתי ספר ולקהילות הורים</p>
+      <h2>הרצאה: ״הפרעות אכילה, כשמשפחה הופכת לכוח מרפא״</h2>
+      <p>סיפור אישי של אמא לבת שהחלימה, לצד ידע מדעי של חוקרת מוח. ההרצאה פותחת שיחה על מחלה שלא מרבים לדבר עליה, ונותנת להורים ולצוותים כלים מעשיים.</p>
+      <ul><li>להורים, לצוותי חינוך ולעובדים</li><li><span class="tbc">שעה וחצי, פרונטלית או בזום</span></li></ul>
+      <a class="btn" href="#contact" data-pick="הרצאה">לבקשת הצעה להרצאה</a>
+    </article>
+    <article id="kit">
+      <div class="tile papers" aria-hidden="true">
+        <div class="sheet"><header><b>בין הפגישות</b><span>שבוע 2</span></header><div class="blk"><b>מה סוכם עם הצוות</b><div class="ln"></div><div class="ln"></div></div><div class="blk"><b>מי אחראי על מה</b><div class="ln"></div><div class="ln"></div></div></div>
+        <div class="sheet"><header><b>בין הפגישות</b><span>דף שבועי</span></header><div class="blk"><b>מה סוכם עם הצוות</b><div class="ln"></div><div class="ln"></div></div><div class="blk"><b>מי אחראי על מה</b><div class="ln"></div><div class="ln"></div></div><div class="blk"><b>שאלות לפגישה הבאה</b><div class="ln"></div><div class="ln"></div></div></div>
+      </div>
+      <p class="who">להורדה בחינם</p>
+      <h2>״בין הפגישות״: דף שבועי להורים</h2>
+      <p>מה סוכם עם הצוות, מי אחראי על מה בבית, ואילו שאלות להביא לפגישה הבאה.</p>
+      <form class="mail" onsubmit="event.preventDefault();this.outerHTML='<p style=&quot;font-weight:700;margin:0&quot;>זהו טופס הדגמה. כתובת המייל לא נשלחה.</p>'"><label for="km" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">מייל</label><input id="km" type="email" placeholder="המייל שלך" required><button class="btn">שלחו לי את הדף</button></form>
+    </article>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="c"><span>© ד״ר יפעת שגב, ליווי הורים בהתמודדות עם הפרעות אכילה</span><nav><a href="#">מאמרים</a><a href="#">מדיניות פרטיות</a><a href="#">הצהרת נגישות</a></nav></div>
+  <div class="c key">* פרט שמסומן בקו מנוקד הוא ערך לדוגמה, לאישור יפעת. המסמכים המצוירים הם המחשה של הכלים.</div>
+</footer>
+
+<script>
+(() => {
+  const shot = location.search.includes('shot');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const dayNames = ['א׳','ב׳','ג׳','ד׳','ה׳','ו׳','ש׳'];
+
+  /* hero ruler: 7 days × 24 hours, one tick is the session (Monday 16:00) */
+  document.getElementById('days').innerHTML = dayNames.map((d, di) =>
+    `<div class="day"><div class="ticks">${Array.from({length:24}, (_, h) => `<i class="${di === 1 && h === 16 ? 'tx' : ''}"></i>`).join('')}</div><small>${d}</small></div>`).join('');
+
+  /* stage tabs (desktop) / accordion (mobile) */
+  const tabs = [...document.querySelectorAll('.st .tab')];
+  const select = t => tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(t));
+    t.addEventListener('keydown', e => { const d = e.key === 'ArrowLeft' ? 1 : e.key === 'ArrowRight' ? -1 : 0; if (!d) return; const n = tabs[(i + d + tabs.length) % tabs.length]; n.focus(); select(n); });
+  });
+  document.querySelectorAll('[data-pick]').forEach(a => a.addEventListener('click', () => { const r = document.querySelector(`#chips input[value="${a.dataset.pick}"]`); if (r) r.checked = true; }));
+
+  /* the week calendar. Example touchpoints only. */
+  const rows = [
+    ['בוקר',        ['ארוחת בוקר','ארוחת בוקר','ארוחת בוקר','ארוחת בוקר','ארוחת בוקר','ארוחת בוקר','ארוחת בוקר משפחתית']],
+    ['בית ספר',     ['בית ספר','בית ספר','בית ספר','בית ספר','בית ספר','בית ספר','']],
+    ['אחר הצהריים', ['חוגים','','','','','קניות לשבת','']],
+    ['ערב',         ['ארוחת ערב','ארוחת ערב','ארוחת ערב','ארוחת ערב','ארוחת ערב','ארוחת שישי','ארוחת ערב']],
+    ['לילה',        ['','','','','','','']],
+  ];
+  const tx = {r:2, d:1, label:'פגישה עם הצוות המטפל'};
+  const me = {'0,0':'בודקים יחד את התוכנית לשבוע','1,2':'שיחה מתואמת מול בית הספר','3,3':'הודעה קצרה לפני ארוחת הערב','2,4':'מסכמים את השבוע ומכינים שאלות לצוות','3,5':'מתכננים יחד את ארוחת שישי'};
+  const order = Object.keys(me).sort((a, b) => a.split(',')[1] - b.split(',')[1]);
+  let h = '<span></span>' + dayNames.map(d => `<span class="dh">יום ${d}</span>`).join('');
+  rows.forEach(([name, cells], r) => {
+    h += `<span class="rh">${name}</span>`;
+    cells.forEach((txt, d) => {
+      const key = `${r},${d}`;
+      if (r === tx.r && d === tx.d) h += `<span class="cell tx"><span>${tx.label}</span></span>`;
+      else if (me[key]) h += `<span class="cell me" style="--i:${order.indexOf(key)}"><span class="base">${txt}</span><span class="y">${me[key]}</span></span>`;
+      else h += `<span class="cell"><span>${txt}</span></span>`;
+    });
+  });
+  document.getElementById('cal').innerHTML = h;
+  /* phone: the same week as a day-by-day list */
+  document.getElementById('agenda').innerHTML = dayNames.map((dn, d) => {
+    const items = rows.map(([, cells], r) => {
+      const key = `${r},${d}`, txt = cells[d];
+      if (r === tx.r && d === tx.d) return `<span class="cell tx"><span>${tx.label}</span></span>`;
+      if (me[key]) return `<span class="cell me ${txt ? '' : 'nobase'}" style="--i:${order.indexOf(key)}"><span class="base">${txt}</span><span class="y">${me[key]}</span></span>`;
+      return txt ? `<span class="cell"><span>${txt}</span></span>` : '';
+    }).join('');
+    return `<div class="aday"><b>יום ${dn}</b><div class="items">${items}</div></div>`;
+  }).join('');
+
+  /* toggle: switches by itself while in view; hovering or focusing pauses it; choosing a view by hand stops it */
+  const wk = document.getElementById('week'), btns = [...wk.querySelectorAll('.toggle button')], auto = document.getElementById('auto');
+  const DUR = {alone: 2000, with: 2000};
+  let mode = 'alone', timer = null, inView = false, paused = false, stopped = reduce || shot;
+  function setMode(m){ mode = m; wk.classList.toggle('with', m === 'with'); btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === m)); }
+  function clear(){ clearTimeout(timer); timer = null; auto.classList.remove('run'); }
+  function schedule(){
+    clear(); if (stopped || paused || !inView) return;
+    auto.style.setProperty('--dur', DUR[mode] + 'ms'); void auto.offsetWidth; auto.classList.add('run');
+    timer = setTimeout(() => { setMode(mode === 'alone' ? 'with' : 'alone'); schedule(); }, DUR[mode]);
+  }
+  btns.forEach(b => b.addEventListener('click', () => { stopped = true; clear(); auto.classList.add('off'); setMode(b.dataset.mode); }));
+  const cal = wk.querySelector('.calwrap');
+  const pause = v => { paused = v; schedule(); };
+  new IntersectionObserver(([e]) => { inView = e.isIntersecting; schedule(); }, {threshold: .35}).observe(cal);
+  document.addEventListener('visibilitychange', () => { paused = document.hidden; schedule(); });
+  if (stopped) { auto.classList.add('off'); if (reduce || location.search.includes('with')) setMode('with'); }
+})();
+</script>
+</body>
+</html>
