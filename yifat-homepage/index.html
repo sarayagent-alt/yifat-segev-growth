@@ -314,7 +314,6 @@ footer .c{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 28p
 footer nav{display:flex;gap:22px;flex-wrap:wrap}
 footer a{text-decoration:none}
 .key{font-size:.85rem;color:var(--navy-2);padding-top:14px}
-.calendar-motion{display:block;background:transparent;color:#fff;border:1px solid #ffffff55;border-radius:6px;font:inherit;font-size:.85rem;padding:5px 12px;margin-top:10px;cursor:pointer}
 .week.with .cell.me{animation:calendar-pop .65s cubic-bezier(.22,1,.36,1) both;animation-delay:calc(var(--i)*45ms)}
 @keyframes calendar-pop{0%{transform:translateY(5px) scale(.97)}65%{transform:translateY(-2px) scale(1.02)}100%{transform:translateY(0) scale(1)}}
 
@@ -404,7 +403,7 @@ footer a{text-decoration:none}
       <div>
         <p>כך נראה שבוע של משפחה בטיפול. החליפו בין המצבים כדי לראות איפה הליווי נכנס.</p>
         <div class="toggle" role="group" aria-label="תצוגת השבוע"><button aria-pressed="true" data-mode="alone">השבוע לבד</button><button aria-pressed="false" data-mode="with">השבוע עם ליווי</button></div>
-        <div class="auto" id="auto" aria-hidden="true"><i></i></div><button class="calendar-motion" type="button" aria-pressed="false">השהיית התצוגה</button>
+        <div class="auto" id="auto" aria-hidden="true"><i></i></div>
       </div>
     </div>
     <div class="calwrap"><div class="cal" id="cal"></div><div class="agenda" id="agenda"></div></div>
@@ -600,7 +599,6 @@ footer a{text-decoration:none}
   /* toggle: switches by itself while in view; hovering or focusing pauses it; choosing a view by hand stops it */
   const wk = document.getElementById('week'), btns = [...wk.querySelectorAll('.toggle button')], auto = document.getElementById('auto');
   const DUR = {alone: 2000, with: 2000};
-  const motionButton = wk.querySelector('.calendar-motion');
   let mode = 'alone', timer = null, inView = false, paused = false, stopped = shot;
   function setMode(m){ mode = m; wk.classList.toggle('with', m === 'with'); btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === m)); }
   function clear(){ clearTimeout(timer); timer = null; auto.classList.remove('run'); }
@@ -610,12 +608,11 @@ footer a{text-decoration:none}
     timer = setTimeout(() => { setMode(mode === 'alone' ? 'with' : 'alone'); schedule(); }, DUR[mode]);
   }
   btns.forEach(b => b.addEventListener('click', () => { stopped = true; clear(); auto.classList.add('off'); setMode(b.dataset.mode); }));
-  motionButton.addEventListener('click', () => { stopped = !stopped; motionButton.setAttribute('aria-pressed', String(stopped)); motionButton.textContent = stopped ? 'המשך התצוגה' : 'השהיית התצוגה'; auto.classList.toggle('off', stopped); schedule(); });
   const cal = wk.querySelector('.calwrap');
   const pause = v => { paused = v; schedule(); };
   new IntersectionObserver(([e]) => { inView = e.isIntersecting; schedule(); }, {threshold: .1}).observe(cal);
   document.addEventListener('visibilitychange', () => { paused = document.hidden; schedule(); });
-  if (stopped) { motionButton.setAttribute('aria-pressed','true'); motionButton.textContent = 'המשך התצוגה'; auto.classList.add('off'); if (location.search.includes('with')) setMode('with'); }
+  if (stopped) { auto.classList.add('off'); if (location.search.includes('with')) setMode('with'); }
 })();
 </script>
 </body>
