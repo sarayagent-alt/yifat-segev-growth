@@ -283,3 +283,21 @@ body.plan main > section:last-child > ol li{margin-bottom:12px}
 .landing-preview figcaption{font-size:13px;line-height:20px;color:var(--ink-3);margin-top:8px}
 .landing table th[scope=row]{width:34%}
 .landing-note{font-size:13px;line-height:20px;color:var(--ink-3)}
+
+/* Subtle color and background depth across the strategy and plan. */
+:root{--paper:#fdfbf8;--fill:#f3efec;--accent-tint:#f3e5e9}
+body.strategy,body.plan{
+ background-color:var(--paper);
+ background-image:radial-gradient(ellipse at 95% 4%,#8a1c3e0b,transparent 36%),radial-gradient(ellipse at 2% 65%,#597c6509,transparent 32%);
+}
+body.strategy .hero,body.plan .strategy-hero{
+ background-image:radial-gradient(ellipse at 12% 15%,#8a1c3e0c,transparent 64%);
+}
+body.strategy .marketing-panel,body.plan .audience-box{
+ background:linear-gradient(120deg,#f5ecef80,#f4f5ed60);
+}
+body.plan .poem-route{background:#faf4f6}
+body.plan .poem-owned{background:#edf2e8}
+body.plan .gantt-active{background:#e7ece4}
+body.plan .budget-total{background:#f1e3e8}
+@media print{body.strategy,body.plan{background:white}}

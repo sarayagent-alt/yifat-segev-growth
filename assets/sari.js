@@ -38,12 +38,4 @@
     total.after(box);
   }
 
-  /* plan: a scroll hint above the timeline on narrow screens */
-  const gscroll = document.querySelector('.gantt-scroll');
-  if (gscroll) {
-    const note = document.createElement('p');
-    note.className = 'scroll-note';
-    note.textContent = 'גללו לצדדים כדי לראות את כל החודשים ←';
-    gscroll.before(note);
-  }
 })();
