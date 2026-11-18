@@ -194,7 +194,7 @@ section{padding-block:var(--s6)}
 .week .aday .cell{min-height:0;padding:6px 10px;border-radius:8px;font-size:.9rem}
 .week .aday .cell.nobase{opacity:0;transition:opacity .45s,background .45s}
 .week.with .aday .cell.nobase{opacity:1}
-@media (prefers-reduced-motion:reduce){.week .cell.me,.week .cell > span,.toggle::before{transition:none}.auto{display:none}}
+
 
 /* ── deliverables ── */
 .deliv .head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s4);align-items:end;margin-bottom:var(--s4)}
@@ -317,7 +317,7 @@ footer a{text-decoration:none}
 .calendar-motion{display:block;background:transparent;color:#fff;border:1px solid #ffffff55;border-radius:6px;font:inherit;font-size:.85rem;padding:5px 12px;margin-top:10px;cursor:pointer}
 .week.with .cell.me{animation:calendar-pop .65s cubic-bezier(.22,1,.36,1) both;animation-delay:calc(var(--i)*45ms)}
 @keyframes calendar-pop{0%{transform:translateY(5px) scale(.97)}65%{transform:translateY(-2px) scale(1.02)}100%{transform:translateY(0) scale(1)}}
-@media(prefers-reduced-motion:reduce){.week.with .cell.me{animation:none}}
+
 </style>
 </head>
 <body>
@@ -548,7 +548,7 @@ footer a{text-decoration:none}
 <script>
 (() => {
   const shot = location.search.includes('shot');
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   const dayNames = ['א׳','ב׳','ג׳','ד׳','ה׳','ו׳','ש׳'];
 
   /* hero ruler: 7 days × 24 hours, one tick is the session (Monday 16:00) */
@@ -601,7 +601,7 @@ footer a{text-decoration:none}
   const wk = document.getElementById('week'), btns = [...wk.querySelectorAll('.toggle button')], auto = document.getElementById('auto');
   const DUR = {alone: 2000, with: 2000};
   const motionButton = wk.querySelector('.calendar-motion');
-  let mode = 'alone', timer = null, inView = false, paused = false, stopped = reduce || shot;
+  let mode = 'alone', timer = null, inView = false, paused = false, stopped = shot;
   function setMode(m){ mode = m; wk.classList.toggle('with', m === 'with'); btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === m)); }
   function clear(){ clearTimeout(timer); timer = null; auto.classList.remove('run'); }
   function schedule(){
@@ -615,7 +615,7 @@ footer a{text-decoration:none}
   const pause = v => { paused = v; schedule(); };
   new IntersectionObserver(([e]) => { inView = e.isIntersecting; schedule(); }, {threshold: .1}).observe(cal);
   document.addEventListener('visibilitychange', () => { paused = document.hidden; schedule(); });
-  if (stopped) { motionButton.setAttribute('aria-pressed','true'); motionButton.textContent = 'המשך התצוגה'; auto.classList.add('off'); if (reduce || location.search.includes('with')) setMode('with'); }
+  if (stopped) { motionButton.setAttribute('aria-pressed','true'); motionButton.textContent = 'המשך התצוגה'; auto.classList.add('off'); if (location.search.includes('with')) setMode('with'); }
 })();
 </script>
 </body>
