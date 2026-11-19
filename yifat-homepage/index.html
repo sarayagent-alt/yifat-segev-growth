@@ -341,6 +341,50 @@ footer a{text-decoration:none}
  .steps li::before{width:32px;height:32px;border-radius:50%;font-size:1rem}
 }
 @media(max-width:360px){.top .c{gap:8px}.top .btn{font-size:.78rem;padding:8px}.top .brand b{font-size:.92rem}.top .brand svg{width:24px}}
+/* Compact hero, whole-week mobile view and four visible deliverables. */
+.mobile-week-summary{display:none}
+.dgrid{gap:24px}
+.dgrid .tile{aspect-ratio:auto;height:112px;padding:12px 20px 0;margin-bottom:14px;align-items:flex-start}
+.dgrid .sheet{max-width:160px;font-size:6px;transform:rotate(-3deg);margin-top:6px}
+.dgrid h3{font-size:1.12rem;margin-bottom:6px}
+.dgrid p{font-size:.95rem;line-height:1.5}
+@media(max-width:900px){
+ .hero .copy{padding:28px var(--pad) 24px}
+ .hero h1{font-size:clamp(1.9rem,7vw,3rem);line-height:1.12;margin-bottom:16px}
+ .hero .sub{font-size:1.08rem;margin-bottom:18px}
+ .hero .media{order:initial;padding:16px var(--pad)}
+ .hero .media figure{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:center;max-width:500px;margin:auto}
+ .hero .media img{height:190px;aspect-ratio:auto;object-position:50% 22%}
+ .hero .sheet{max-width:180px;font-size:7px;justify-self:center}
+ .hero .acts{gap:10px 18px}
+ .hero .acts .btn{white-space:normal}
+ .week .agenda,.day-picker{display:none}
+ .week .cal{display:grid;grid-template-columns:38px repeat(7,minmax(0,1fr));gap:4px}
+ .cal .dh{padding:0 0 6px;text-align:center;font-size:.75rem}
+ .cal .rh{font-size:.7rem;line-height:1.2}
+ .week .cell{min-height:39px;padding:3px;border-radius:5px;align-items:center;justify-items:center}
+ .week .cell>span{font-size:0;text-align:center}
+ .week .cell:not(.me):not(.tx)>span:not(:empty)::after{content:"·";font-size:18px;opacity:.5}
+ .week .cell.tx>span::after{content:"צוות";font-size:10px}
+ .week .cell.me .base:not(:empty)::after{content:"·";font-size:18px;opacity:.5}
+ .week .cell.me .y::after{content:"ליווי";font-size:10px}
+ .mobile-week-summary{display:block;margin-top:16px;font-size:.85rem;color:#e8efff}
+ .mobile-week-summary ul{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;padding:0;list-style:none;margin:8px 0 0}
+ .mobile-week-summary li{padding:4px 0;border-top:1px solid #ffffff25}
+ .week .legend{font-size:.8rem;gap:10px}
+ .dgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 16px}
+ .dgrid .tile{height:74px;padding:8px 12px 0;margin-bottom:10px}
+ .dgrid .sheet{font-size:4.6px;max-width:110px}
+ .dgrid h3{font-size:1rem}
+ .dgrid p{font-size:.88rem;line-height:1.45}
+ .deliv .head{margin-bottom:22px}
+}
+@media(max-width:360px){
+ .hero .media img{height:160px}
+ .hero .sheet{font-size:6px}
+ .week .cal{grid-template-columns:32px repeat(7,minmax(0,1fr));gap:3px}
+ .week .cell.tx>span::after,.week .cell.me .y::after{font-size:9px}
+}
 </style>
 </head>
 <body>
@@ -425,13 +469,14 @@ footer a{text-decoration:none}
     <div class="head">
       <h2 id="wk-h">שעה אחת בשבוע עם הצוות. כל השאר קורה בבית.</h2>
       <div>
-        <p>כך נראה שבוע של משפחה בטיפול. החליפו בין המצבים כדי לראות איפה הליווי נכנס.</p>
+        <p>כך נפרסת התמיכה לאורך השבוע, בין המפגש עם הצוות המטפל לבין החיים בבית.</p>
         <div class="toggle" role="group" aria-label="תצוגת השבוע"><button aria-pressed="true" data-mode="alone">השבוע לבד</button><button aria-pressed="false" data-mode="with">השבוע עם ליווי</button></div>
         <div class="auto" id="auto" aria-hidden="true"><i></i></div>
       </div>
     </div>
     <div class="calwrap"><div class="cal" id="cal"></div><div class="agenda" id="agenda"></div></div>
     <div class="legend"><span><i style="background:var(--sky)"></i>פגישה עם הצוות המטפל</span><span><i style="background:var(--yellow)"></i>נקודות שבהן אני איתכם</span></div>
+<div class="mobile-week-summary"><strong>נקודות התמיכה השבועיות</strong><ul><li>א׳ · תוכנית לשבוע</li><li>ג׳ · תיאום עם בית הספר</li><li>ד׳ · תמיכה לפני הארוחה</li><li>ה׳ · סיכום ושאלות לצוות</li><li>ו׳ · הכנה לארוחת שישי</li></ul></div>
     <p class="note">דוגמה לשבוע. התוכנית בפועל נבנית לפי המשפחה ולפי הנחיות הצוות.</p>
   </div>
 </section>
@@ -637,23 +682,7 @@ footer a{text-decoration:none}
     return `<div class="aday"><b>יום ${dn}</b><div class="items">${items}</div></div>`;
   }).join('');
 
-  const agenda = document.getElementById('agenda');
-  const dayPicker = document.createElement('div');
-  dayPicker.className = 'day-picker';
-  dayPicker.setAttribute('role', 'group');
-  dayPicker.setAttribute('aria-label', 'יום בשבוע');
-  dayPicker.innerHTML = dayNames.map((day, index) => '<button type="button" aria-pressed="' + (index === 0) + '" data-day="' + index + '">יום ' + day + '</button>').join('');
-  agenda.before(dayPicker);
-  function pickDay(index) {
-    [...agenda.children].forEach((day, i) => { day.hidden = i !== index; });
-    dayPicker.querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
-  }
-  dayPicker.addEventListener('click', event => {
-    const button = event.target.closest('button');
-    if (button) pickDay(Number(button.dataset.day));
-  });
-  pickDay(0);
-  /* toggle: switches by itself while in view; hovering or focusing pauses it; choosing a view by hand stops it */
+/* toggle: switches by itself while in view; hovering or focusing pauses it; choosing a view by hand stops it */
   const wk = document.getElementById('week'), btns = [...wk.querySelectorAll('.toggle button')], auto = document.getElementById('auto');
   const DUR = {alone: 2000, with: 2000};
   let mode = 'alone', timer = null, inView = false, paused = false, stopped = shot;
