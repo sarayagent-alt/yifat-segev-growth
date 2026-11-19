@@ -65,3 +65,18 @@
   }
   wrap.append(list);
 })();
+/* Keep each table row readable on phones with its original column labels. */
+(() => {
+ document.querySelectorAll('body.plan table:not(.annual-gantt)').forEach(table => {
+  const headers = [...table.querySelectorAll('thead tr:first-child > *')].map(cell => cell.textContent.trim());
+  if (!headers.length) return;
+  table.classList.add('responsive-table');
+  table.querySelectorAll('tbody tr').forEach(row => {
+   [...row.cells].forEach((cell, index) => {
+    if (cell.tagName !== 'TD') return;
+    cell.dataset.label = headers[index] || '';
+    if (cell.textContent.trim().length > 65) cell.dataset.long = '';
+   });
+  });
+ });
+})();

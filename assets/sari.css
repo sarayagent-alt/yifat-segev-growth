@@ -318,3 +318,59 @@ body.plan .budget-total{background:#f1e3e8}
 }
 @keyframes sheet-rise{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
 @media(prefers-reduced-motion:reduce){.plan .poem-dialog[open]{animation:none}}
+/* Responsive density: preserve the overview instead of stretching each item. */
+@media screen{
+ :root{--sec:64px;--gap:40px;--rail:190px}
+ body.strategy header,body.strategy main,body.strategy footer{max-width:1120px}
+ body.strategy .hero{max-width:none}
+ body.strategy .hero h1{max-width:850px}
+ body.strategy .hero .lead{max-width:820px}
+ body.strategy .funnel-diagram{margin-inline:0}
+ body.strategy .three,body.strategy .steps{gap:24px}
+ .strategy-hero .bridge{margin-top:20px}
+ .priority-goals{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .poem-routes{max-width:none;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+ .poem-owned{grid-column:auto}
+ .poem-paid::before,.poem-earned::before{display:none}
+ .poem-destination{max-width:none}
+ .poem-route{padding-top:42px}
+ .poem-route::after{inset-block-start:12px}
+ .visual-grid{gap:24px;margin-block:24px}
+}
+@media screen and (max-width:640px){
+ :root{--sec:40px}
+ main > section:first-child{padding-top:28px}
+ body.strategy header{padding:12px 20px;gap:6px 16px}
+ body.strategy .brand small{font-size:12px}
+ body.strategy header nav{gap:4px 18px;font-size:14px}
+ .bridge{margin-top:24px}
+ .hero-signature{margin-top:16px}
+ .three,.steps,.visual-grid,.split,.progress-map{gap:18px;margin-block:22px}
+ .funnel-diagram{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px;margin-top:24px}
+ .funnel-stage strong{font-size:17px;line-height:24px}
+ .funnel-stage span{font-size:14px;line-height:22px}
+ .priority-goals li{padding:12px}
+ .priority-goals p{font-size:14px;line-height:21px}
+ .plan .poem-routes{display:grid;grid-template-columns:1fr;gap:10px}
+ .plan .poem-route{display:grid;grid-template-columns:80px 1fr;align-items:center;gap:2px 12px;min-height:0;padding:14px 16px 14px 54px}
+ .plan .poem-route > strong:first-child{grid-row:1/4;align-self:center}
+ .plan .poem-route::after{top:50%;transform:translateY(-50%);inset-inline-end:12px;font-size:12px}
+ .plan .poem-route+.poem-route::before{display:none}
+ .plan .poem-route > span{grid-column:2}
+ .responsive-table{min-width:0!important;display:block}
+ .responsive-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ .responsive-table tbody{display:grid;gap:14px}
+ .responsive-table tr{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--rule);border-radius:8px;padding:14px;background:#fff;gap:10px 16px}
+ .responsive-table tr > *{display:block;width:auto!important;min-width:0;border:0;padding:0;text-align:start!important;font-size:15px;line-height:24px;white-space:normal}
+ .responsive-table tr > th[scope=row]{grid-column:1/-1;font-size:17px;line-height:25px;color:var(--ink)}
+ .responsive-table td::before{content:attr(data-label);display:block;font-size:13px;line-height:20px;color:var(--ink-3);font-weight:700;margin-bottom:3px}
+ .responsive-table td[data-long]{grid-column:1/-1}
+ .responsive-table td p{margin-bottom:6px}
+ .table-scroll:has(.responsive-table){overflow:visible;margin-block:20px}
+ .supporting-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+}
+@media screen and (max-width:640px){
+ [aria-labelledby=budget] .responsive-table tr > td:first-child{grid-column:1/-1;font-weight:700;font-size:17px}
+ [aria-labelledby=budget] .responsive-table tr > td:first-child::before{display:none}
+ .landing .responsive-table td{grid-column:1/-1}
+}
