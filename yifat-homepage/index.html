@@ -317,6 +317,30 @@ footer a{text-decoration:none}
 .week.with .cell.me{animation:calendar-pop .65s cubic-bezier(.22,1,.36,1) both;animation-delay:calc(var(--i)*45ms)}
 @keyframes calendar-pop{0%{transform:translateY(5px) scale(.97)}65%{transform:translateY(-2px) scale(1.02)}100%{transform:translateY(0) scale(1)}}
 
+.day-picker{display:none}
+@media(max-width:900px){
+ .st .tab{position:relative;padding:14px 16px;padding-inline-end:40px}
+ .st .tab::after{content:"+";position:absolute;inset-inline-end:16px;inset-block-start:50%;transform:translateY(-50%);font-size:1.4rem}
+ .st .tab[aria-expanded=true]::after{content:"−"}
+ .st .panel{padding:18px;gap:16px;min-width:0}.st .panel>*{min-width:0}.st .panel .btn{white-space:normal;max-width:100%;text-align:center}
+ .st .panel h3{font-size:1.3rem;line-height:1.3;margin-bottom:10px}
+ .st .panel li{padding:9px 0}
+ .st .panel .first{background:transparent;border-top:1px solid #c5def3;padding:14px 0 0;border-radius:0}
+ .st .panel .first p{margin-bottom:12px}
+ .day-picker{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin-bottom:12px}
+ .day-picker button{font:inherit;font-size:.85rem;min-height:44px;padding:4px 0;border:1px solid #ffffff55;background:transparent;color:#fff;border-radius:6px;cursor:pointer}
+ .day-picker button[aria-pressed=true]{background:var(--yellow);color:var(--navy);border-color:var(--yellow)}
+ .week .aday[hidden]{display:none}
+ .week .aday{grid-template-columns:1fr}
+ .week .aday>b{display:none}
+ .week .aday .items{display:grid;gap:8px}
+ .week .aday .cell{min-height:48px;align-items:center}
+ .toggle{display:grid;width:100%}
+ .toggle button{padding:10px 8px;white-space:normal}
+ .steps li{grid-template-columns:36px minmax(0,1fr);gap:12px;padding:18px 0}
+ .steps li::before{width:32px;height:32px;border-radius:50%;font-size:1rem}
+}
+@media(max-width:360px){.top .c{gap:8px}.top .btn{font-size:.78rem;padding:8px}.top .brand b{font-size:.92rem}.top .brand svg{width:24px}}
 </style>
 </head>
 <body>
@@ -556,9 +580,26 @@ footer a{text-decoration:none}
 
   /* stage tabs (desktop) / accordion (mobile) */
   const tabs = [...document.querySelectorAll('.st .tab')];
-  const select = t => tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
+  const stageMobile = matchMedia('(max-width:900px)');
+  let activeStage = stageMobile.matches ? null : tabs[0];
+  function select(t) {
+    activeStage = t;
+    tabs.forEach(x => {
+      const on = x === t;
+      x.setAttribute('aria-selected', String(on));
+      x.setAttribute('aria-expanded', String(on));
+      x.tabIndex = stageMobile.matches || on ? 0 : -1;
+      x.setAttribute('role', stageMobile.matches ? 'button' : 'tab');
+      const panel = document.getElementById(x.getAttribute('aria-controls'));
+      panel.hidden = !on;
+      panel.setAttribute('role', stageMobile.matches ? 'region' : 'tabpanel');
+    });
+    document.querySelector('.st').setAttribute('role', stageMobile.matches ? 'group' : 'tablist');
+  }
+  stageMobile.addEventListener('change', () => select(stageMobile.matches ? null : activeStage || tabs[0]));
+  select(activeStage);
   tabs.forEach((t, i) => {
-    t.addEventListener('click', () => select(t));
+    t.addEventListener('click', () => select(stageMobile.matches && activeStage === t ? null : t));
     t.addEventListener('keydown', e => { const d = e.key === 'ArrowLeft' ? 1 : e.key === 'ArrowRight' ? -1 : 0; if (!d) return; const n = tabs[(i + d + tabs.length) % tabs.length]; n.focus(); select(n); });
   });
   document.querySelectorAll('[data-pick]').forEach(a => a.addEventListener('click', () => { const r = document.querySelector(`#chips input[value="${a.dataset.pick}"]`); if (r) r.checked = true; }));
@@ -596,6 +637,22 @@ footer a{text-decoration:none}
     return `<div class="aday"><b>יום ${dn}</b><div class="items">${items}</div></div>`;
   }).join('');
 
+  const agenda = document.getElementById('agenda');
+  const dayPicker = document.createElement('div');
+  dayPicker.className = 'day-picker';
+  dayPicker.setAttribute('role', 'group');
+  dayPicker.setAttribute('aria-label', 'יום בשבוע');
+  dayPicker.innerHTML = dayNames.map((day, index) => '<button type="button" aria-pressed="' + (index === 0) + '" data-day="' + index + '">יום ' + day + '</button>').join('');
+  agenda.before(dayPicker);
+  function pickDay(index) {
+    [...agenda.children].forEach((day, i) => { day.hidden = i !== index; });
+    dayPicker.querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
+  }
+  dayPicker.addEventListener('click', event => {
+    const button = event.target.closest('button');
+    if (button) pickDay(Number(button.dataset.day));
+  });
+  pickDay(0);
   /* toggle: switches by itself while in view; hovering or focusing pauses it; choosing a view by hand stops it */
   const wk = document.getElementById('week'), btns = [...wk.querySelectorAll('.toggle button')], auto = document.getElementById('auto');
   const DUR = {alone: 2000, with: 2000};

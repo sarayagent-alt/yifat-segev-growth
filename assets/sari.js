@@ -39,3 +39,29 @@
   }
 
 })();
+
+/* Compact milestone view for phones. */
+(() => {
+  const wrap = document.querySelector('.gantt-wrap');
+  if (!wrap) return;
+  const list = document.createElement('div');
+  list.className = 'mobile-milestones';
+  for (const marker of wrap.querySelectorAll('.gantt-marker')) {
+    const details = document.createElement('details');
+    const summary = document.createElement('summary');
+    summary.textContent = marker.getAttribute('aria-label');
+    details.append(summary);
+    const source = document.getElementById(marker.getAttribute('aria-describedby'));
+    const labels = ['מה עושים', 'מה מודדים', 'מה מחליטים'];
+    const notes = source.querySelectorAll('[data-note] > span:last-child');
+    notes.forEach((note, index) => {
+      const paragraph = document.createElement('p');
+      const label = document.createElement('strong');
+      label.textContent = labels[index] + ' ';
+      paragraph.append(label, document.createTextNode(note.textContent));
+      details.append(paragraph);
+    });
+    list.append(details);
+  }
+  wrap.append(list);
+})();
